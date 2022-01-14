@@ -1,0 +1,11 @@
+$primary-color: #00bad4;
+$grey-color: #9aaebb;
+$dark-color: #364954;
+$active-color: #54bc8d;
+
+:export {
+  primary-color: $primary-color;
+  grey-color: $grey-color;
+  dark-color: $dark-color;
+  accent-color: $active-color;
+}
