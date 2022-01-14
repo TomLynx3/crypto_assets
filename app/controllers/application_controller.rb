@@ -1,8 +1,15 @@
 class ApplicationController < ActionController::API
 
+
+    
+
    SECRET = ENV['SECRET']
 
    @user_id = ""
+
+   def frontend_index_html
+        render file: 'public/index.html'
+    end
 
     def authentication
 

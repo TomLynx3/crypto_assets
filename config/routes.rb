@@ -13,4 +13,8 @@ Rails.application.routes.draw do
     resources :crypto_assets
   end
 
+   get '*path', to: 'application#frontend_index_html', constraints: lambda { |request|
+      !request.xhr? && request.format.html?
+    }
+
 end
