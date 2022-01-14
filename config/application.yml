@@ -1,8 +1,0 @@
-DATABASE_HOST: "localhost"
-DATABASE_PORT: "5432"
-DATABASE_NAME: "cryptoprofit"
-DATABASE_USERNAME: "postgres"
-DATABASE_PASSWORD: "mysecretpassword"
-SECRET: "MOMVrgZNSb1SPzHsEqqCk7c2SVRMw5GN"
-API_KEY: "1c7feb92-acfd-48be-86a4-3b641999a40e"
-API_URL_PRICE_CONVERSATION: "https://pro-api.coinmarketcap.com/v1/tools/price-conversion"
