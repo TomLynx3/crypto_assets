@@ -18,6 +18,7 @@
       "src": "windows11/SmallTile.scale-200.png",
       "sizes": "142x142"
     },
+    
     {
       "src": "windows11/SmallTile.scale-400.png",
       "sizes": "284x284"
