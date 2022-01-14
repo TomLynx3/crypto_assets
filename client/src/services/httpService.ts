@@ -6,8 +6,7 @@ import {
 } from "../helpers/interfaces/global.interfaces";
 
 export class HttpService implements IHttpService {
-  // private baseUrl: string = window.location.origin + "/api";
-  private baseUrl: string = "http://localhost:4000/api";
+  private baseUrl: string = window.location.origin + "/api";
   private token: string | null = window.localStorage.getItem("token");
   private config: any = {
     headers: {
