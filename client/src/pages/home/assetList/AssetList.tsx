@@ -10,15 +10,22 @@ import styles from "./assetlist.module.scss";
 const AssetList = observer(() => {
   useEffect(() => {
     assetItemsStore.getAssetItems();
+    const interval = setInterval(() => {
+      assetItemsStore.getAssetItems();
+    }, 15000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <Fragment>
-      {assetItemsStore.isLoading ? <Loading></Loading> : null}
       <div className={`${styles.wrapper} card`}>
-        {assetItemsStore.assetItems.map((assetItem, index) => {
-          return <AssetItemView item={assetItem} key={index}></AssetItemView>;
-        })}
+        {assetItemsStore.assetItems.length <= 0 ? (
+          <Loading></Loading>
+        ) : (
+          assetItemsStore.assetItems.map((assetItem, index) => {
+            return <AssetItemView item={assetItem} key={index}></AssetItemView>;
+          })
+        )}
       </div>
     </Fragment>
   );
