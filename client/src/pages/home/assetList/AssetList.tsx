@@ -12,7 +12,7 @@ const AssetList = observer(() => {
     assetItemsStore.getAssetItems();
     const interval = setInterval(() => {
       assetItemsStore.getAssetItems();
-    }, 15000);
+    }, 60000);
     return () => clearInterval(interval);
   }, []);
 
