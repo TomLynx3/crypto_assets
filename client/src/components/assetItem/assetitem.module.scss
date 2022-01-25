@@ -1,0 +1,238 @@
+@import "../../styles/variables.module.scss";
+
+.wrapper {
+  background-color: $dark-grey-color;
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-between;
+  color: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+
+  .currencyIcon {
+    // padding: 3rem;
+    height: 100%;
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .fullName {
+      text-align: left;
+      font-weight: 700;
+      font-size: 20px;
+      text-decoration: underline;
+    }
+
+    .badges {
+      display: flex;
+      flex-direction: row;
+
+      .badgeItem {
+        color: white;
+        margin-right: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+        height: 70%;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+      }
+
+      i {
+        margin-bottom: 0.1rem;
+        margin-right: 0.5rem;
+        font-size: 20px;
+      }
+    }
+
+    .controlPanel {
+      display: flex;
+      margin-right: 1rem;
+      align-items: center;
+
+      .controlPanelItem {
+        margin-left: 1rem;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      i {
+        font-size: 25px;
+        padding: 0.5rem;
+        margin: 0.3rem;
+        color: white;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    .data {
+      width: 50%;
+      //background-color: red;
+
+      .dataItem {
+        display: flex;
+        justify-content: space-between;
+
+        .dataTitle {
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        .moneyItem {
+          display: flex;
+          flex-direction: row;
+          i {
+            margin-right: 0.2rem;
+            text-align: center;
+            margin-top: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobileView {
+  display: none;
+}
+
+@media only screen and (max-width: 950px) {
+  .wrapper {
+    display: none;
+  }
+  .mobileView {
+    background-color: $dark-grey-color;
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
+    color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+
+    .mobileHeader {
+      display: flex;
+      justify-content: space-between;
+      .mobileFullName {
+        font-weight: 700;
+        font-size: 18px;
+        text-decoration: underline;
+      }
+
+      .mobileToolBar {
+        display: flex;
+        flex-direction: row;
+
+        .toolBarItem {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0.8rem 1rem 0.8rem 1rem;
+
+          margin-left: 1rem;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+        }
+        i {
+          font-size: 20px;
+          margin-top: 0.1rem;
+        }
+      }
+    }
+    .mobileContent {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 1rem;
+
+      .mobileCryptoLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .mobileData {
+        width: 60%;
+
+        .mobileDataItem {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 1rem;
+
+          .mobileDataTitle {
+            font-weight: 700;
+            font-size: 15px;
+          }
+          .mobileMoneyItem {
+            display: flex;
+
+            i {
+              margin-top: 0.2rem;
+              margin-right: 0.2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .mobileBadges {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+
+      .mobileBadgeItem {
+        text-align: center;
+        padding: 0.3rem;
+        width: 30%;
+        height: 100%;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}

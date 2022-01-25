@@ -58,17 +58,49 @@ module Api
                 assets.each do |x|
                 
                 fiat_total += x[:fiat_amount]
-                crypto_to_eur += get_current_asset_rate(x[:symbol],x[:amount])
-                
+                crypto_to_eur += get_current_asset_rate(x[:symbol],x[:amount])[:price]
+                # logger.
                 end
-            rescue 
+            rescue =>error 
                 res.success = false
-                res.errorMsg = "Server Error"
+                res.errorMsg = error.message
                 
             end
 
             res.result = {fiat_total:fiat_total , crypto_to_eur:crypto_to_eur}
 
+            render json: res
+        end
+
+        def get_asset_items
+            begin
+            res = BaseResponse.new(true,nil,nil)
+            
+            assets = CryptoAsset.select("SUM(crypto_assets.amount) as amount , SUM(crypto_assets.fiat_amount) as fiat_amount, crypto_assets.symbol as symbol").group(:symbol).where(user_id:@user_id)
+            result =[]
+             assets.each do |x|
+                asset_conversation = get_current_asset_rate(x[:symbol],x[:amount])
+                asset_rate = get_current_asset_rate(x[:symbol],1)
+                result.push({
+                    full_name:asset_conversation[:name],
+                    symbol:x[:symbol],
+                    amount:x[:amount],
+                    fiat_amount_invested:x[:fiat_amount],
+                    current_rate:asset_rate[:price],
+                    total:asset_conversation[:price],
+                    profit:asset_conversation[:price] - x[:fiat_amount],
+                    profit_ratio:(asset_conversation[:price] - x[:fiat_amount])/x[:fiat_amount] *100
+                })
+                end
+           
+            rescue  =>error
+                res.success = false
+                res.errorMsg = "Server Error"
+                logger.info(error)
+            end
+
+            res.result = result
+        
             render json: res
         end
 
@@ -113,8 +145,8 @@ module Api
             res = http.request(req)
 
             body = JSON.parse(res.body)
-            # logger.info(body["data"]["quote"]["EUR"]["price"])
-            return body["data"]["quote"]["EUR"]["price"]
+            # logger.info(body["data"]["name"])
+            return {price:body["data"]["quote"]["EUR"]["price"],name:body["data"]["name"]}
         end
     end
 end 

@@ -19,7 +19,7 @@ export class HttpService implements IHttpService {
   }
   public baseHttpGet(req: BaseGetReq) {
     //this.config.headers["x-auth-token"] = this.getToken();
-    console.log(this.axiosInstance);
+    //console.log(this.axiosInstance);
     return this.axiosInstance.get(req.url, this.config);
   }
 

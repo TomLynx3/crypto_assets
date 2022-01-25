@@ -2,10 +2,13 @@ $primary-color: #00bad4;
 $grey-color: #9aaebb;
 $dark-color: #364954;
 $active-color: #54bc8d;
-
+$dark-grey-color: #667a86;
+$black-color: #364954;
 :export {
   primary-color: $primary-color;
   grey-color: $grey-color;
   dark-color: $dark-color;
   accent-color: $active-color;
+  dark-grey-color: $dark-grey-color;
+  black-color: $black-color;
 }

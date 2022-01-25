@@ -49,3 +49,18 @@ export interface AddCryptoReq {
   amount: number;
   fiat_amount: number;
 }
+
+export interface GetAssetItemsReq extends BaseResponse {
+  result: AssetItem[];
+}
+
+export interface AssetItem {
+  full_name: string;
+  symbol: string;
+  amount: number;
+  fiat_amount_invested: number;
+  current_rate: number;
+  total: number;
+  profit: number;
+  profit_ratio: number;
+}

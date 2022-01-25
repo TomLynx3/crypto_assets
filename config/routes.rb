@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post "/login", to: "auth#login"
     get "/check", to:'auth#check'
     get "/profit", to:'crypto_assets#get_profit'
+    get "/get-asset-items", to:'crypto_assets#get_asset_items'
 
     resources :crypto_assets
   end

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 @import "~bootstrap/scss/bootstrap";
 
 @import "../src/styles/variables.module.scss";
@@ -9,6 +10,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: $grey-color;
+  font-family: "Roboto", sans-serif;
 }
 
 .main-container {
@@ -46,4 +48,31 @@ body {
 
 .error-color {
   color: #e91937;
+}
+
+.bg-success {
+  background-color: #54bc8d;
+}
+
+.bg-danger {
+  background-color: #e91937;
+}
+
+.bg-black {
+  background-color: $black-color;
+}
+
+.card {
+  background-color: $dark-color;
+  border-radius: 15px;
+  padding: 1rem;
+  color: white;
+  border: 3px solid white;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-container {
+    margin: 0px !important;
+    padding: 0 !important;
+  }
 }

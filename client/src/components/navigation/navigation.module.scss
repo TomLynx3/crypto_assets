@@ -61,4 +61,10 @@
       width: 15%;
     }
   }
+
+  @media only screen and (max-height: 550px) {
+    .wrapper {
+      display: none;
+    }
+  }
 }
